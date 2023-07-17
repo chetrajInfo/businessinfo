@@ -55,13 +55,15 @@ header{
     font-size: 18px;
 }
 
-h3, p{
+h2, p{
     margin-bottom: 10px;
 }
 .warn-mes{
     display: flex;
     gap: 120px;
     margin-left: 20px;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+
 }
 .btn-policy{
     display: flex;
@@ -96,8 +98,18 @@ button:hover{
     border: 1px solid black;
     
 }
+p{
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}
 
-
+.connect{
+    margin: 6rem;
+    text-align: center;
+    font-size: 15px;
+}
+label{
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}
 /* Responsive design starts here */
 @media only screen and (min-width: 600px) {
     .container{

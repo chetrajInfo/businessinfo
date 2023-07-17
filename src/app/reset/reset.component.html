@@ -1,3 +1,21 @@
 <div class="container">
+    <h1>Reset Username/Password</h1>
+    <form >
+        <mat-form-field appearance="fill" class="form-me">
+            <div>
+            <input matInput type="email" placeholder="Email" [(ngModel)]="email" name="email">
+            </div>
+            
+        </mat-form-field><br>
+        <mat-form-field appearance="fill" class="form-me">
+            <div>
+            <input matInput type="password" placeholder="Token" [(ngModel)]="token" name="token">
+            </div>
+            
+        </mat-form-field><br>
+        
+    
+        <button mat-button (click)="sendResetInstructions()">Send Reset Instructions</button>
+    </form>
     
 </div>

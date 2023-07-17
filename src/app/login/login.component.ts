@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ResetComponent } from '../reset/reset.component';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,14 @@ export class LoginComponent implements OnInit {
 
   credentialsError: boolean = false; // new field
 
-  constructor(){}
+
+  //this constructor and openResetDialog() is used to show pop up message for reseting user name and password
+  //when user forget and dont forget to import (import {MatDialog} form '@angular/material/dialog')
+  constructor(public dialog: MatDialog) {}
+
+  openResetDialog() {
+    this.dialog.open(ResetComponent);
+  }
   
   ngOnInit(): void {
     this.loginForm = new FormGroup({

@@ -3,5 +3,50 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
-
 }
+
+form {
+    height: 33vh;
+    width: 39vw;
+    padding: 5rem;
+    background-color: antiquewhite;
+}
+
+button {
+    height: 3vh;
+    width: 26vw;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+}
+
+.form-me {
+    height: 7vh; 
+    width: 26vw; 
+    font-size: 15pt; 
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@media screen and (max-width: 900px) {
+    form {
+        width: 70vw;
+        padding: 1rem;
+    }
+
+    button {
+        width: 60vw;
+    }
+
+    .form-me {
+        width: 65vw; 
+    }
+}
+
+    
