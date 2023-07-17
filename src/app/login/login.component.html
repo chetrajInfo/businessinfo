@@ -1,10 +1,11 @@
+<header>
+    <div class="head-txt">
+        Secured Business Page.
+    </div>
+    <div class="reg"><a routerLink="/register">Register</a></div>
+</header>
 <div class="container">
-    <header>
-        <div class="head-txt">
-            Secured Business Page.
-        </div>
-        <div class="reg"><a href="">Register</a></div>
-    </header>
+  
     <div class="form-container">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <h2>Welcome Back To Login</h2>
@@ -49,8 +50,9 @@
             <div *ngIf="loginForm.invalid && isSubmitted">
                 <span style="color:red">All Fields must be filled.</span>
             </div>
-            
-              
+            <div *ngIf="isSubmitted && credentialsError" style="color: red">
+                One or more credentials are wrong.<br> Please check and reenter.
+              </div>        
             
             <div><a href="">Reset Username/Password.</a></div>
         </form>

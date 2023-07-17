@@ -11,6 +11,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup | any;
   isSubmitted: boolean = false;  // add this line
 
+  credentialsError: boolean = false; // new field
+
   constructor(){}
   
   ngOnInit(): void {
@@ -21,19 +23,29 @@ export class LoginComponent implements OnInit {
         token : new FormControl(null, Validators.required)
     });
   }
+  
 
   onSubmit(): void {
     this.isSubmitted = true;
-    if (this.loginForm.valid) {
+    this.credentialsError = this.checkCredentials();  // set the credentials error
+
+    if (this.loginForm.valid && !this.credentialsError) { // check also the credentials
       console.log(this.loginForm.value);
       this.loginForm.reset();
-      // If you want to hide the error message after a successful submission
-      // you could reset isSubmitted here as well
       this.isSubmitted = false;
     } else {
       console.log("Submission Fail");
+     
       this.isSubmitted = true;
     }
+  }
+  
+  // checks if the input credentials are wrong
+  checkCredentials() {
+    return !(this.loginForm.get('username').value === 'user1' 
+        && this.loginForm.get('password').value === 'user1'
+        && this.loginForm.get('business').value === 'user1'
+        && this.loginForm.get('token').value === 'user1');
   }
   
   

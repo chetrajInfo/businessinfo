@@ -1,1 +1,102 @@
-<p>register works!</p>
+
+<header>
+    <div class="head-txt">
+        Secured Business Page.
+    </div>
+    <div class="reg"><a routerLink="/">Login</a></div>
+</header>
+<div class="container">
+    <h3>Get Strarted With Free Account</h3>
+    <div>
+        <p>
+            Create a free account and enjoy the services provided by our company.
+            If you already have xyz company account. Login <a routerLink="/">Here</a>
+        </p>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <div><label>Business Name</label></div>
+        <div>
+            <input id="business" type="text" #businessInput formControlName="business"
+                [ngClass]="{'is-invalid': registerForm.get('business')?.invalid && registerForm.get('business')?.touched}"
+                class="myTextbox">
+            <div *ngIf="registerForm.get('business')?.invalid && registerForm.get('business')?.touched"
+                class="text-danger">
+                <div *ngIf="registerForm.get('business')?.errors?.['required']" class="error-msg">Business Name is required.
+                </div>
+            </div>
+        </div>
+
+
+
+        <div><label>Username</label></div>
+        <div>
+            <input type="text" formControlName="username"
+                [ngClass]="{'is-invalid': registerForm.get('username')?.invalid && registerForm.get('username')?.touched}"
+                class="myTextbox">
+            <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched"
+                class="text-danger">
+                <div *ngIf="registerForm.get('username')?.errors?.['required'] || registerForm.get('username')?.errors?.['onlyNumber'] " class="error-msg">Username is required or Must not be only Number.
+                </div>
+        </div>
+        </div>
+
+        <div><label>Email</label></div>
+        <div>
+            <input type="email" formControlName="email"
+                [ngClass]="{'is-invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}"
+                class="myEmailbox">
+            <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
+                <div *ngIf="registerForm.get('email')?.errors?.['required']" class="error-msg">Email is required.</div>
+                <div *ngIf="registerForm.get('email')?.errors?.['email']" class="error-msg">Invalid email format.</div>
+            </div>
+        </div>
+
+        <div><label>Phone</label></div>
+        <div>
+            <input type="tel" formControlName="phone"
+                [ngClass]="{'is-invalid': registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched}"
+                class="myPhonebox">
+            <div *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched" class="text-danger">
+                <div *ngIf="registerForm.get('phone')?.errors?.['required']" class="error-msg">Phone number is required.
+                </div>
+                <div *ngIf="registerForm.get('phone')?.errors?.['pattern']" class="error-msg">Phone number must be 10
+                    digits.</div>
+            </div>
+        </div>
+
+
+        <div><label>Password</label></div>
+        <div>
+            <input type="password" formControlName="password"
+                [ngClass]="{'is-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}"
+                (focus)="passwordFocused = true" class="myPasswordbox">
+            <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                class="text-danger">
+                <div *ngIf="registerForm.get('password')?.errors?.['required']" class="error-msg">Password is required.
+                </div>
+                <div *ngIf="registerForm.get('password')?.errors?.['pattern']" class="error-msg">Password haven't
+                    reached the requirement below.</div>
+            </div>
+        </div>
+        <div class="warn-mes">
+            <ul>
+                <li>one lowercase letter</li>
+                <li>one uppercase letter</li>
+                <li>one special character</li>
+            </ul>
+            <ul>
+                <li>one number</li>
+                <li>atleast length must be 8</li>
+            </ul>
+        </div>
+
+        <div class="btn-policy">
+            <button [disabled]="!registerForm.valid">Get Started</button>
+            <p>By clicking here, you agree to XYZ company<br>
+                <a href="#">Anti-spam policy & Terms of Use.</a>
+            </p>
+        </div>
+    </form>
+
+</div>

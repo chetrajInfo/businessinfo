@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+    height: 17vh;
+    width: 100%;
+    background-color: rgb(163, 163, 196);
+    color: white;
+    align-items: center;
+    flex-direction: row;
+}
+
+.head-txt {
+    font-size: 33px;
+    font-weight: bold;
+}
+
+.reg a{
+    padding: 9px 16px;
+    background-color:black;
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 90vw; /* Define the width of the container here */
+    height: auto; 
+    border: 1px solid black;
+    box-shadow: 2px 2px 4px grey;
+    padding: 2rem; 
+    flex-wrap: wrap;
+    margin: 40px auto auto auto;
+}
+
+.myTextbox, .myPhonebox, .myEmailbox, .myPasswordbox {
+    height: auto; 
+    border-radius: 3px;
+    min-height: 6vh;
+    padding: 3px;
+    width: 100%; 
+    max-width: 390px; /* This line will prevent your inputs from becoming too large */
+    margin: 0 auto 20px; /* This will center your inputs */
+    font-size: 18px;
+}
+
+h3, p{
+    margin-bottom: 10px;
+}
+.warn-mes{
+    display: flex;
+    gap: 120px;
+    margin-left: 20px;
+}
+.btn-policy{
+    display: flex;
+    gap: 60px;
+}
+button {
+    height: 50%; /* adjust as needed */
+    width: 50%; /* adjust as needed */
+    min-height: 7vh; /* adjust as needed */
+    min-width: 12vw; /* adjust as needed */
+    margin: 9px 0 0 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background: steelblue;
+    cursor: pointer;
+}
+button:hover{
+    box-shadow: 1px 1px 2px grey;
+}
+
+.is-invalid {
+    border: 1px solid red;
+  }
+.error-msg{
+    color:red;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}  
+.error-pass{
+    padding: 2px;
+    border: 1px solid black;
+    
+}
+
+
+/* Responsive design starts here */
+@media only screen and (min-width: 600px) {
+    .container{
+        width: 75vw; 
+    }
+    .myTextbox, .myPhonebox, .myEmailbox, .myPasswordbox {
+        width: 100%; 
+    }
+ 
+
+}
+
+@media only screen and (min-width: 900px) {
+    .container{
+        width: 50vw; 
+    }
+    .myTextbox, .myPhonebox, .myEmailbox, .myPasswordbox {
+        width: 100%; 
+    }
+    header{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto; 
+    }
+    .head-txt, .reg {
+        margin: 10px 0;
+    }
+ 
+}
