@@ -1,0 +1,59 @@
+<div class="container">
+    <header>
+        <div class="head-txt">
+            Secured Business Page.
+        </div>
+        <div class="reg"><a href="">Register</a></div>
+    </header>
+    <div class="form-container">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <h2>Welcome Back To Login</h2>
+            <div class="input-group">
+                <div>
+                    <label for="username">Username:</label>
+                </div>
+                <div class="text-pass">
+                    <input id="username" type="text" formControlName="username">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div>
+                    <label for="password">Password:</label>
+                </div >
+                <div class="text-pass">
+                    <input id="password" type="password" formControlName="password">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div>
+                    <label for="business">Business Name:</label>
+                </div>
+                <div class="text-pass">
+                    <input id="business" type="text" formControlName="business">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div>
+                    <label for="token">Token</label>
+                </div>
+                <div class="token">
+                    <input id="token" type="password" formControlName="token">
+                </div>
+            </div>
+            <div class="rem-me"><input type="checkbox">Remember Me</div>
+
+            <button type="submit">Submit</button>
+            <div *ngIf="loginForm.invalid && isSubmitted">
+                <span style="color:red">All Fields must be filled.</span>
+            </div>
+            
+              
+            
+            <div><a href="">Reset Username/Password.</a></div>
+        </form>
+    </div>
+</div>
+
