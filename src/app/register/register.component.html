@@ -68,14 +68,14 @@
 
         <div><label>Password</label></div>
         <div>
-            <input type="password" formControlName="password"
-                [ngClass]="{'is-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}"
+            <input type="password" formControlName="pass"
+                [ngClass]="{'is-invalid': registerForm.get('pass')?.invalid && registerForm.get('pass')?.touched}"
                 (focus)="passwordFocused = true" class="myPasswordbox">
-            <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+            <div *ngIf="registerForm.get('pass')?.invalid && registerForm.get('pass')?.touched"
                 class="text-danger">
-                <div *ngIf="registerForm.get('password')?.errors?.['required']" class="error-msg">Password is required.
+                <div *ngIf="registerForm.get('pass')?.errors?.['required']" class="error-msg">Password is required.
                 </div>
-                <div *ngIf="registerForm.get('password')?.errors?.['pattern']" class="error-msg">Password haven't
+                <div *ngIf="registerForm.get('pass')?.errors?.['pattern']" class="error-msg">Password haven't
                     reached the requirement below.</div>
             </div>
         </div>
