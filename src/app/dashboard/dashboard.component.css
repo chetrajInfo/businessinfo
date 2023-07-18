@@ -97,7 +97,7 @@ button:hover {
     margin: 6px;
     font-weight: bold;
     font-style: italic;
-    transition: 0.3ms;;
+    transition: 0.6ms;;
 }
 
 .sidebar ul li a:hover{
