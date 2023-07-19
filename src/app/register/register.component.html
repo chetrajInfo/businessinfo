@@ -3,20 +3,21 @@
     <div class="head-txt">
         Secured Business Page.
     </div>
-    <div class="reg"><a routerLink="/">Login</a></div>
+   
 </header>
 <div class="container">
     <h2>Get Started With Free Account</h2>
     <div>
         <p>
-            Create a free account and enjoy the services provided by our company.
-            If you already have xyz company account. Login <a routerLink="/dashboard">Here</a>
+            Create a account and enjoy the services provided by our company.
+            If your business is not register just fill up form below.
         </p>
     </div>
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
         <div><label>Business Name</label></div>
         <div>
+            <!-- #businessInput is used for changing any input text into UpperCase-->
             <input id="business" type="text" #businessInput formControlName="business"
                 [ngClass]="{'is-invalid': registerForm.get('business')?.invalid && registerForm.get('business')?.touched}"
                 class="myTextbox"  autocomplete="random-string">
@@ -46,7 +47,7 @@
         <div>
             <input type="email" formControlName="email"
                 [ngClass]="{'is-invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}"
-                class="myEmailbox" autocomplete="random-string">
+                class="myEmailbox"  autocomplete="random-string">
             <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
                 <div *ngIf="registerForm.get('email')?.errors?.['required']" class="error-msg">Email is required.</div>
                 <div *ngIf="registerForm.get('email')?.errors?.['email']" class="error-msg">Invalid email format.</div>
@@ -69,13 +70,14 @@
 
         <div><label>Password</label></div>
         <div>
+       
+
             <input type="password" formControlName="pass"
                 [ngClass]="{'is-invalid': registerForm.get('pass')?.invalid && registerForm.get('pass')?.touched}"
                 (focus)="passwordFocused = true" class="myPasswordbox">
-            <div *ngIf="registerForm.get('pass')?.invalid && registerForm.get('pass')?.touched"
+                <div *ngIf="registerForm.get('pass')?.invalid && passwordFocused"
                 class="text-danger">
-                <div *ngIf="registerForm.get('pass')?.errors?.['required']" class="error-msg">Password is required.
-                </div>
+                
                 <div *ngIf="registerForm.get('pass')?.errors?.['pattern']" class="error-msg">Password haven't
                     reached the requirement below.</div>
             </div>
@@ -93,8 +95,14 @@
         </div>
 
         <div class="btn-policy">
-            <button [disabled]="!registerForm.valid">Get Started</button>
-            <p>By clicking here, you agree to XYZ company<br>
+            <button [ngClass]="registerForm.valid ? 'button-enabled' : 'button-disabled'" [disabled]="!registerForm.valid">
+                {{registerForm.valid ? 'Submit' : 'UnSubmit'}}
+            </button>
+            <p>
+            <input type="checkbox" class="chk-bx"  formControlName="agree" (change)="onCheckboxChange($event)"
+[ngClass]="{'is-invalid': registerForm.get('agree')?.invalid }" >By checking box, you agree to zetto company agreement.<br>
+
+                
                 <a href="#">Anti-spam policy & Terms of Use.</a>
             </p>
         </div>

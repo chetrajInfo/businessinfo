@@ -13,13 +13,10 @@ export class UserregisterService {
 
 
 
-
    createNewUser(newUser:Object): Observable <Object> {
 
        return this.httpClient.post(`${this.urlBase}`, newUser);
    }
-
-
 
 
 

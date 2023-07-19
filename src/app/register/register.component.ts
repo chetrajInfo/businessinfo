@@ -1,7 +1,9 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { UserregisterService } from '../userregister.service';
 import { UserRegister } from '../user-register.model';
+import { validateHorizontalPosition } from '@angular/cdk/overlay';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,24 +11,26 @@ import { UserRegister } from '../user-register.model';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  [x: string]: any;
+ // [x: string]: any;
 
-       userRegister : UserRegister = new UserRegister();
+  userRegister : UserRegister = new UserRegister();
 
-     constructor(private userregister: UserregisterService) { }
+  constructor(private userregister: UserregisterService, private router: Router) { }
 
   registerForm!: FormGroup;
   passwordFocused: boolean = false;
+  invalidEmail:boolean = false;
 
-  @ViewChild('businessInput', { static: false }) businessInput!: ElementRef;
+  @ViewChild('businessInput', { static: false }) businessInput!: ElementRef; //this code is used to make the business filed text to uppercas
 
   ngOnInit() {
     this.registerForm = new FormGroup({
       'business':new FormControl(null,[Validators.required]),
       'username': new FormControl(null, [Validators.required, this.notOnlyNumber]),
-      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'email': new FormControl(null, [Validators.required, Validators.email, this.emailValidator]),
       'phone': new FormControl(null, [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
-      'pass': new FormControl(null, [Validators.required, Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")])
+      'pass': new FormControl(null, [Validators.required, Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")]),
+      'agree': new FormControl(null ,[Validators.required]) //when declare true on place of null it will automatically check the checkbox in form
     });
   }
   
@@ -48,15 +52,15 @@ export class RegisterComponent implements OnInit {
 
 
   onSubmit() {
+
   // your form submission code here
   if (this.registerForm.valid) {
-    //console.log(this.registerForm.value);
     this.userregister.createNewUser(this.registerForm.value).subscribe(
       (response: any) => {
-        //console.log(response); // successful HTTP response
         this.registerForm.reset();
+        this.router.navigate(["/"]);
       },
-      (      error: any) => {
+      ( error: any) => {
         console.log(error); // handle HTTP error
       }
     );
@@ -77,6 +81,15 @@ export class RegisterComponent implements OnInit {
     }
     return null;
   }
-  
 
+  //this will check the checkbox is clicked or not if clicked the button will be undable if not button will be disable
+  onCheckboxChange(e:any) {
+    const agreeControl = this.registerForm.get('agree');
+    if (e.target.checked) {
+      agreeControl?.setValue(true);
+    } else {
+      agreeControl?.setValue(null);
+    }
+  }
+  
 }

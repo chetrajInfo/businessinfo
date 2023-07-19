@@ -22,16 +22,6 @@ header{
     font-weight: bold;
 }
 
-.reg a{
-    padding: 9px 16px;
-    background-color:black;
-    color: white;
-    border-radius: 3px;
-    text-decoration: none;
-    font-size: 19px;
-    font-weight: bold;
-}
-
 .container{
     display: flex;
     flex-direction: column;
@@ -53,6 +43,9 @@ header{
     max-width: 390px; /* This line will prevent your inputs from becoming too large */
     margin: 0 auto 20px; /* This will center your inputs */
     font-size: 18px;
+}
+.chk-bx{
+    height: 14px; width: 14px;
 }
 
 h2, p{
@@ -120,6 +113,22 @@ a{
 label{
     font-size: clamp(1rem, 2vw, 1.1rem);
 }
+
+.button-disabled {
+    font-size: 19px;
+    background-color: grey;
+    color: white;
+}
+
+.button-enabled {
+    font-size: 19px;
+    background-color: blue;
+    color: white;
+}
+
+
+
+
 /* Responsive design starts here */
 @media only screen and (min-width: 600px) {
     .container{
