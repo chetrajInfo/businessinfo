@@ -50,7 +50,8 @@ h2 {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"], 
+input[type="number"]{
     height: 5vh;
     width: 26vw;
     padding-left: 3px;
@@ -61,7 +62,8 @@ input[type="password"] {
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="number"]:focus {
     outline-color: green;
 
 }
@@ -78,7 +80,7 @@ label {
     align-items: center;
 
 }
-.token input[type="password"] {
+.token input[type="number"] {
     color: transparent;
     text-shadow: 0 0 0 0 #f3efef;
     caret-color: #100f0f;
@@ -130,7 +132,8 @@ a {
 @media screen and (max-width: 900px) {
 
     input[type="text"],
-    input[type="password"] {
+    input[type="password"]
+    input[type="number"] {
         min-width: 260px;
         /* Set minimum width for smaller screens */
     }

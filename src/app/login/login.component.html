@@ -38,10 +38,10 @@
 
             <div class="input-group">
                 <div>
-                    <label for="token">Token</label>
+                    <label for="id">Token</label>
                 </div>
                 <div class="token">
-                    <input id="token" type="password" formControlName="token">
+                    <input id="id" type="number" formControlName="id">
                 </div>
             </div>
             <div class="rem-me"><input type="checkbox">Remember Me</div>
@@ -50,7 +50,7 @@
             <div *ngIf="loginForm.invalid && isSubmitted">
                 <span style="color:red">All Fields must be filled.</span>
             </div>
-            <div *ngIf="isSubmitted && credentialsError" style="color: red">
+            <div *ngIf="credentialsError" style="color: red">
                 One or more credentials are wrong.<br> Please check and reenter.
               </div>        
             
