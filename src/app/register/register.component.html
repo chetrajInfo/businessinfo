@@ -19,7 +19,8 @@
         <div>
             <input id="business" type="text" #businessInput formControlName="business"
                 [ngClass]="{'is-invalid': registerForm.get('business')?.invalid && registerForm.get('business')?.touched}"
-                class="myTextbox">
+                class="myTextbox"  autocomplete="random-string">
+
             <div *ngIf="registerForm.get('business')?.invalid && registerForm.get('business')?.touched"
                 class="text-danger">
                 <div *ngIf="registerForm.get('business')?.errors?.['required']" class="error-msg">Business Name is required.
@@ -33,7 +34,7 @@
         <div>
             <input type="text" formControlName="username"
                 [ngClass]="{'is-invalid': registerForm.get('username')?.invalid && registerForm.get('username')?.touched}"
-                class="myTextbox">
+                class="myTextbox" autocomplete="random-string">
             <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched"
                 class="text-danger">
                 <div *ngIf="registerForm.get('username')?.errors?.['required'] || registerForm.get('username')?.errors?.['onlyNumber'] " class="error-msg">Username is required or Must not be only Number.
@@ -45,7 +46,7 @@
         <div>
             <input type="email" formControlName="email"
                 [ngClass]="{'is-invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}"
-                class="myEmailbox">
+                class="myEmailbox" autocomplete="random-string">
             <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
                 <div *ngIf="registerForm.get('email')?.errors?.['required']" class="error-msg">Email is required.</div>
                 <div *ngIf="registerForm.get('email')?.errors?.['email']" class="error-msg">Invalid email format.</div>

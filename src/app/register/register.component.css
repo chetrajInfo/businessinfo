@@ -90,12 +90,14 @@ button:hover{
   }
 .error-msg{
     color:red;
-    margin-top: -10px;
+    margin-top: -15px;
     margin-bottom: 5px;
+    font-size: 16px;
 }  
 .error-pass{
     padding: 2px;
     border: 1px solid black;
+    
     
 }
 p{
@@ -103,10 +105,18 @@ p{
 }
 
 .connect{
-    margin: 6rem;
+    margin-top: 2.5rem;
     text-align: center;
     font-size: 15px;
+    padding:1.5rem;
+    background-color: rgb(137, 137, 132);
+    
 }
+a{
+    color: blue;
+    font-size: 16px;
+}
+
 label{
     font-size: clamp(1rem, 2vw, 1.1rem);
 }

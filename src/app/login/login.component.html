@@ -14,7 +14,7 @@
                     <label for="username">Username:</label>
                 </div>
                 <div class="text-pass">
-                    <input id="username" type="text" formControlName="username">
+                    <input id="username" type="text" formControlName="username" autocomplete="random-string">
                 </div>
             </div>
 
@@ -23,7 +23,7 @@
                     <label for="password">Password:</label>
                 </div >
                 <div class="text-pass">
-                    <input id="password" type="password" formControlName="password">
+                    <input id="password" type="password" formControlName="password" >
                 </div>
             </div>
 
@@ -32,7 +32,7 @@
                     <label for="business">Business Name:</label>
                 </div>
                 <div class="text-pass">
-                    <input id="business" type="text" formControlName="business">
+                    <input id="business" type="text" formControlName="business" autocomplete="random-string" >
                 </div>
             </div>
 
@@ -47,10 +47,12 @@
             <div class="rem-me"><input type="checkbox">Remember Me</div>
 
             <button type="submit">Submit</button>
+            <!--
             <div *ngIf="loginForm.invalid && isSubmitted">
                 <span style="color:red">All Fields must be filled.</span>
             </div>
-            <div *ngIf="credentialsError" style="color: red">
+            -->
+            <div *ngIf="(credentialsError || loginForm.invalid) && isSubmitted " style="color: red">
                 One or more credentials are wrong.<br> Please check and reenter.
               </div>        
             
@@ -60,3 +62,6 @@
     </div>
 </div>
 
+<div class="connect">
+    <a href="">If you want to know further detail about our service you can click this link.</a>
+</div>

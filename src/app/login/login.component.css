@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&family=Tektur&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -10,7 +13,7 @@ header{
     flex-wrap: wrap;
     justify-content: space-around;
     padding:10px;
-    height: 17vh;
+    height: 12vh;
     width: 100%;
     background-color: rgb(163, 163, 196);
     color: white;
@@ -21,17 +24,27 @@ header{
     font-weight: bold;
     justify-content: center;
     margin-left: 390px;
+    /* font-family: 'Tektur', cursive; This font is import from the google font*/
 }
 
 .container {
     display: grid;
     place-items: center;
-    height: 100vh;
+    height: 80vh;
 }
 
 h2 {
     text-align: center;
     margin-bottom: 26px;
+    font-family: 'Roboto Slab', serif; /*This font is import from the google font*/
+    font-weight: bold;
+}
+.connect{
+    margin-top: 0.2rem;
+    text-align: center;
+    font-size: 17px;
+    padding:1rem;
+    background-color: rgb(137, 137, 132);
 }
 
 .form-container {
@@ -83,8 +96,14 @@ label {
 .token input[type="number"] {
     color: transparent;
     text-shadow: 0 0 0 0 #f3efef;
-    caret-color: #100f0f;
+    caret-color: #100f0f; /* this will change only cursor to black when background text is not visible */
 }
+
+/* This will change the slection color to white when selecting text */
+input[type='number']::selection {
+    background: white;
+}
+
 
 
 input[type="checkbox"] {
@@ -132,7 +151,7 @@ a {
 @media screen and (max-width: 900px) {
 
     input[type="text"],
-    input[type="password"]
+    input[type="password"],
     input[type="number"] {
         min-width: 260px;
         /* Set minimum width for smaller screens */
