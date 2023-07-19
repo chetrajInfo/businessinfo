@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserregisterService {
-  [x: string]: any;
+  //[x: string]: any;
   private urlBase = "http://localhost:8080/adduser";
 
   constructor(private httpClient: HttpClient) {
