@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SubscribepageComponent } from './subscribepage/subscribepage.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     ResetComponent,
     DashboardComponent,
+    SubscribepageComponent,
   
   ],
   imports: [

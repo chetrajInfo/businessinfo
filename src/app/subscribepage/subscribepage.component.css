@@ -1,0 +1,105 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.subscription-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    border: 2px inset grey;
+    box-shadow: 2px 2px 3px 3px gray;
+    margin: 10rem 5rem 0 10rem;
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.subscription-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 25px 25px 155px 25px;
+    margin: 5px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.subscription-card h2 {
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family:roboto;
+}
+
+.savings {
+    color: green;
+    font-size: 18px;
+    font-weight:600;
+}
+
+.purchase-btn {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.purchase-btn:hover {
+    background-color: darkblue;
+}
+
+.features {
+    list-style-type: none;
+    padding-left: 2.6rem;
+    font-size:17px;
+    text-align: justify;
+}
+.features > li{
+    margin-top: 10px;
+}
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .subscription-card {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .price, .savings, .features {
+        font-size: 0.9em;
+    }
+
+    .subscription-container {
+        padding: 1rem;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .subscription-container {
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        margin: auto;
+    }
+
+    .subscription-card {
+        width: 100%;
+        max-width: 600px;
+    }
+}

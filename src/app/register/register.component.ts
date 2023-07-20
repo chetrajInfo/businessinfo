@@ -58,7 +58,7 @@ export class RegisterComponent implements OnInit {
     this.userregister.createNewUser(this.registerForm.value).subscribe(
       (response: any) => {
         this.registerForm.reset();
-        this.router.navigate(["/"]);
+        this.router.navigate(["/subscription"]);
       },
       ( error: any) => {
         console.log(error); // handle HTTP error
