@@ -1,0 +1,61 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="employee-form">
+    
+        <div class="date">
+            <label for="hireDate">Hire Date:</label>
+            <input id="hireDate" formControlName="hireDate" type="date">
+        </div>
+    <div class="first-last-name">
+    <div >
+        <label for="firstName">First Name:</label>
+        <input id="firstName" formControlName="firstName" type="text">
+    </div>
+    <div>
+        <label for="lastName">Last Name:</label>
+        <input id="lastName" formControlName="lastName" type="text">
+    </div>
+    </div>
+    <div>
+        <label for="address">Full Address:</label>
+        <textarea id="address" formControlName="address" rows="6" cols="50"></textarea>
+    </div>
+    <div>
+        <label for="role">Role:</label>
+        <input id="role" formControlName="role" type="text">
+    </div>
+    <div>
+        <label for="department">Department:</label>
+        <input id="department" formControlName="department" type="text">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" type="email">
+    </div>
+    <div>
+        <label for="phoneNumber">Phone Number:</label>
+        <input id="phoneNumber" formControlName="phoneNumber" type="tel">
+    </div>
+
+    <div>
+        <label for="employmentStatus">Employment Status:</label>
+        <input id="employmentStatus" formControlName="employmentStatus" type="text">
+    </div>
+    <div>
+        <label for="socialnum">Socail Security Number:</label>
+        <input id="socialnum" formControlName="socialnum" type="file">
+    </div>
+    <div>
+        <label for="driverlic">Identification Card:</label>
+        <input id="idcard" formControlName="idcard" type="file">
+    </div>
+    <div>
+        <label for="salary">Salary:</label>
+        <input id="salary" formControlName="salary" type="number">
+    </div>
+
+    <div class="button-group">
+        <button type="submit">Insert</button>
+        <button type="button">Update</button>
+        <button type="button">Delete</button>
+        <button type="button">Cancel</button>
+    </div>
+</form>

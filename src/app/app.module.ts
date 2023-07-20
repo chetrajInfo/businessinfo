@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SubscribepageComponent } from './subscribepage/subscribepage.component';
+import { EmplogininfoComponent } from './emplogininfo/emplogininfo.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { SubscribepageComponent } from './subscribepage/subscribepage.component'
     ResetComponent,
     DashboardComponent,
     SubscribepageComponent,
+    EmplogininfoComponent,
   
   ],
   imports: [

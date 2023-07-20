@@ -1,0 +1,113 @@
+/* difine here size and use it inside any class and id attribute using var() keyword */
+:root {
+
+--main-font-size: 17px;  
+--main-height: 5vh;
+--main-width: 5vw;
+
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:  17px;
+}
+
+.employee-form > div {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+   
+  }
+  
+ 
+  
+  .employee-form label {
+    margin-bottom: 5px;
+     font-size:  17px;
+     font-weight: bold;
+  }
+  
+  .employee-form input {
+    height: 5vh;
+    padding: 5px;
+    box-shadow: 1px 1px 1px grey;
+    font-size:  17px;
+  }
+  .employee-form textarea{
+    padding: 5px;
+    box-shadow: 1px 1px 2px 1px grey;
+    font-size:  17px;
+  }
+  .employee-form input[type="file"]{
+    width: 18vw;
+  } 
+  .employee-form input[type="number"]{
+    width: 23vw;
+  }
+
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+
+    flex-direction: row !important;
+    gap: 10px;
+  }
+  
+   button {
+    width: 20%;
+    height: 6vh;
+    margin: 40px 0;
+    font-weight: bold;
+
+  }
+
+  input[type="text"]{
+
+    height: 5vh;
+  }
+
+  .date input[type="date"]{
+    width: 12vw;
+    height: 5vh;
+    font-size:  17px;
+  }
+
+  .first-last-name{
+        display: flex;  /* added this */
+        flex-direction: row !important;
+        justify-content: space-between;  /* added this */
+    }
+    
+   .first-last-name > div {
+        
+        flex: 1; /* added this */
+        padding-right: 5px;  /* add some space between the inputs */
+      }
+
+  .first-last-name input[type="text"]{
+        width: 18vw;
+        height: 5vh;
+        font-size:  17px;
+      }
+
+  @media (max-width: 600px) {
+    .employee-form {
+      padding: 10px;
+    }
+  
+    .button-group button {
+      flex: 1 1 auto;
+      margin: 5px;
+    
+    }
+    .employee-form input[type="number"],   .employee-form input[type="file"],   .employee-form input[type="text"],  .employee-form input[type="date"]{
+       width: auto;
+       
+    }
+  }
+  

@@ -43,7 +43,7 @@
             <li><a href="#">Labor Cost</a></li>
             <li><a href="#">Maintainence/Repair</a></li>
             <li><a href="#">License Permit</a></li>
-            <li><a href="#">Insurance</a></li>
+            <li><a href="#">Insurance/Legal Service</a></li>
         </ul>
 
         <h2>Other</h2>
@@ -76,7 +76,7 @@
                 <div class="dropdown">
                     <button class="dropbtn">Employee Management</button>
                     <ul class="dropdown-content">
-                        <li><a href="#">Empolyee Info</a></li>
+                        <li><a [routerLink]="['/dashboard/employee-info']">Employee Info</a></li>
                         <li><a href="#">Time-Sheet</a></li>
                         <li><a href="#">Schedule</a></li>
                         <li><a href="#">Payroll</a></li>
@@ -97,5 +97,6 @@
                 </div>
             </div>
             </section>
+            <router-outlet></router-outlet>
     </main>
 </div>
