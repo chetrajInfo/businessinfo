@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SubscribepageComponent } from './subscribepage/subscribepage.component';
 import { EmplogininfoComponent } from './emplogininfo/emplogininfo.component';
+import { EmptimesheetComponent } from './emptimesheet/emptimesheet.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { EmplogininfoComponent } from './emplogininfo/emplogininfo.component';
     DashboardComponent,
     SubscribepageComponent,
     EmplogininfoComponent,
+    EmptimesheetComponent,
   
   ],
   imports: [

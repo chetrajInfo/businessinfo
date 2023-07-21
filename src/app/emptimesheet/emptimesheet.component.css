@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.container {
+
+    height: 100vh;
+    margin: 40px 0 20px 0;
+    justify-content: center;
+    text-align: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/*
+tr td{
+    background-color: white;
+    border: none;
+}
+*/
+
+.emp-dep input[type="text"] {
+    background-color: white;
+    border: none ;
+    border-bottom: 2px solid grey ;
+    padding-left: 2px;
+    margin: 5px;
+    
+}
+
+.emp-dep input[type="text"]:focus {
+    outline: none;
+}
+
+th {
+    margin-left: 40px;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 21px;
+    font-style: italic;
+}
+
+.btn button,
+.btn input[type="button"] {
+    margin: 1rem 0 0 9rem;
+    height: 5vh;
+    width: 12vw;
+    border-radius: 6px;
+    background-color: rgb(73, 73, 233);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+   
+}
+
+.btn button:hover,
+.btn input[type="button"]:hover {
+    box-shadow: 1px 2px 2px grey;
+}
+
+
+
+.week {
+    font-weight: bold;
+}
+
+input[type="number"] {
+    height: 4vh;
+    width: 3vw;
+    padding-left: 1px;
+    border: 2px inset grey;
+}
+
+.total > input[type="number"] {
+    float: right;
+    width: 8vw;
+}

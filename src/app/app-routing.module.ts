@@ -6,6 +6,7 @@ import { ResetComponent } from './reset/reset.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SubscribepageComponent } from './subscribepage/subscribepage.component';
 import { EmplogininfoComponent } from './emplogininfo/emplogininfo.component';
+import { EmptimesheetComponent } from './emptimesheet/emptimesheet.component';
 
 const routes: Routes = [
  { path:'', component:LoginComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
  { path:'subscription', component:SubscribepageComponent},
  { path:'empinfo', component:EmplogininfoComponent},
  {path: 'dashboard', component: DashboardComponent, children: [ { path: 'employee-info', component: EmplogininfoComponent } ]},
+ {path: 'dashboard', component: DashboardComponent, children: [ { path: 'employee-timesheet', component: EmptimesheetComponent } ]},
 ]
 
 @NgModule({
