@@ -1,0 +1,23 @@
+Adding Honstable Yes, you can choose to use either Handsontable (hot-table) or ag-Grid (ag-grid-angular) based on your project requirements and preferences. Both libraries provide powerful features for displaying tabular data and offer various customization options. Here's a brief comparison to help you decide:
+
+Handsontable (hot-table):
+
+Handsontable is known for its simplicity and ease of integration.
+It provides an Excel-like user interface and is relatively easy to set up.
+Handsontable is great for smaller projects or scenarios where you need a straightforward spreadsheet-like visualization without too many complex features.
+The community edition is available under the MIT license, which allows free usage and distribution.
+ag-Grid (ag-grid-angular):
+
+ag-Grid is a more feature-rich data grid library designed to handle large datasets efficiently.
+It offers advanced functionalities like column pinning, cell rendering, filtering, and more.
+ag-Grid provides extensive options for customization and is well-suited for complex scenarios where you need a highly interactive and performant data grid.
+It has both a free version (Community Edition) and commercial versions (Enterprise Editions) with additional features and support.
+
+Install the Library:
+Use npm to install the desired library and its dependencies. Open your terminal or command prompt and run the following command:
+
+For Handsontable:
+> npm install handsontable --save
+
+For ag-grid-angular for community version which is free 
+npm install ag-grid-angular ag-grid-community --save

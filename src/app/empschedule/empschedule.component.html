@@ -1,0 +1,47 @@
+<div class="container">
+    <form>
+      <table>
+        <caption>Employee Weekly Schedule</caption>
+        <tr>
+          <td class="dt">
+            Date:<input type="date">
+          </td>
+        </tr>
+        <tr>
+          <td><br><br></td>
+        </tr>
+        <tr>
+          <th>Employee</th>
+          <ng-container *ngFor="let day of daysOfWeek">
+            <th>{{ day }}</th>
+          </ng-container>
+        </tr>
+        <ng-container *ngFor="let employee of employees; let empIndex = index">
+          <tr>
+            <td class="emp">
+              <input type="text" [(ngModel)]="employee.name" />
+            </td>
+            <ng-container *ngFor="let day of daysOfWeek; let dayIndex = index">
+              <td class="week">
+                <input type="text" [(ngModel)]="employee.schedule[day]" />
+              </td>
+            </ng-container>
+          </tr>
+          <!-- Add a blank row after each employee row -->
+          <tr *ngIf="empIndex < employees.length - 1"><td [attr.colspan]="daysOfWeek.length + 1"></td></tr>
+        </ng-container>
+        <tr>
+          <!-- Apply colspan to this tr element -->
+          <td [attr.colspan]="daysOfWeek.length + 1" class="btn">
+            <button type="button" (click)="addEmployee()">+</button>
+            <button type="submit">Save</button>
+            <input type="button" value="Print For Manual">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  
+
+
+

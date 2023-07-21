@@ -18,6 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { SubscribepageComponent } from './subscribepage/subscribepage.component';
 import { EmplogininfoComponent } from './emplogininfo/emplogininfo.component';
 import { EmptimesheetComponent } from './emptimesheet/emptimesheet.component';
+import { EmpscheduleComponent } from './empschedule/empschedule.component';
+//import { HotTableModule } from '@handsontable/angular';
+//import { AgGridModule } from 'ag-grid-angular';
+
 
 
 @NgModule({
@@ -30,6 +34,8 @@ import { EmptimesheetComponent } from './emptimesheet/emptimesheet.component';
     SubscribepageComponent,
     EmplogininfoComponent,
     EmptimesheetComponent,
+    EmpscheduleComponent,
+    
   
   ],
   imports: [
@@ -42,9 +48,10 @@ import { EmptimesheetComponent } from './emptimesheet/emptimesheet.component';
     MatInputModule,
     MatButtonModule,
     FormsModule,
-    HttpClientModule 
-
+    HttpClientModule,
+    //HotTableModule.forRoot(),
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
