@@ -9,7 +9,7 @@
 
 .container {
     display: flex;
-    height: 140vh;
+    height: 150vh;
 }
 
 header {
@@ -19,7 +19,7 @@ header {
     background-color: #333;
     color: white;
     padding: 10px;
-    width: 24vw;
+    width: 20vw;
     text-transform: uppercase;
     font-size: 16px;
     text-shadow: 1px 1px 2px white;
@@ -49,9 +49,9 @@ button:hover {
 }
 
 .img-logo img {
-    width: 23vw;
+    width: 19vw;
+    padding: 2px;
     margin-top: 25px;
-    overflow: hidden;
 }
 
 .sidebar {

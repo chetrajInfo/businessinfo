@@ -10,6 +10,7 @@ export class EmplogininfoComponent {
   employeeForm = new FormGroup({
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
+    empid: new FormControl('',Validators.required),
     address: new FormControl('', Validators.required),
     role: new FormControl('', Validators.required),
     department: new FormControl(''),

@@ -1,0 +1,49 @@
+<form [formGroup]="payrollForm" (ngSubmit)="onSubmit()">
+<h2>Payroll Information</h2>
+    <mat-form-field>
+      <mat-label>Employee ID</mat-label>
+      <input matInput formControlName="employeeId" autocomplete="random-text">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Employee Name</mat-label>
+      <input matInput formControlName="employeeName" autocomplete="random-text">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Salary</mat-label>
+      <input matInput formControlName="salary" type="number" autocomplete="random-text">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Allowances</mat-label>
+      <input matInput formControlName="allowances" type="number" autocomplete="random-text">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Deductions</mat-label>
+      <input matInput formControlName="deductions" type="number" autocomplete="random-text">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker1" placeholder="Date*" formControlName="fromDate" autocomplete="random-text">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+  <!--
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker2" placeholder="To Date" formControlName="toDate">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+    -->
+
+    <div>
+      <button mat-raised-button type="button" (click)="fileInput.click()">Upload Payroll Image</button><span>(.pdf,&nbsp;.jpg,&nbsp;.png)</span>
+      <input hidden #fileInput type="file" (change)="onFileSelected($event)" />
+    </div><br>
+  
+    <button mat-raised-button type="submit">Submit</button>
+  
+  </form>
+  

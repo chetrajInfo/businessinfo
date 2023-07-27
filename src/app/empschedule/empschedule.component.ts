@@ -12,7 +12,7 @@ export class EmpscheduleComponent {
 
   // Array to hold the employee schedule data
   employees: EmployeeSchedule[] = [];
-
+  showPlusButton = true;
 
  addEmployee() {
     const newEmployee: EmployeeSchedule = {
@@ -30,12 +30,16 @@ export class EmpscheduleComponent {
     };
     this.employees.push(newEmployee);
   }
-
+ 
   // Function to check if the employee schedule is non-empty
   hasNonEmptySchedule(schedule: any): boolean {
     return Object.values(schedule).some(day => day !== '');
   }
 
+    // Function to remove an employee row
+    removeEmployee(index: number) {
+      this.employees.splice(index, 1);
+    }
   
   // Function to handle form submission and save the schedule data
   onSubmit() {

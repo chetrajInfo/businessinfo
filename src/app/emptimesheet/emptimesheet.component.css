@@ -7,8 +7,9 @@
 }
 
 .container {
-
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
     margin: 40px 0 20px 0;
     justify-content: center;
     text-align: center;
@@ -95,4 +96,23 @@ input[type="number"] {
 .total > input[type="number"] {
     float: right;
     width: 8vw;
+}
+ 
+@media screen and (max-width: 800px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin:auto;
+  
+        width: auto;
+    }
+    table {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      font-size: 14px;
+      margin: 0;
+     
+      overflow: scroll;
+    }
 }

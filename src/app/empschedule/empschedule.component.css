@@ -1,6 +1,6 @@
 .container {
     font-family: Arial, sans-serif;
-    margin: 20px 0;
+    margin: 120px 0;
     width: auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -9,7 +9,7 @@
   }
   
   table{
-    width: 300px;
+    width: 400px;
     max-width: 320px;
     border-collapse: collapse;
   }
@@ -43,6 +43,7 @@
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
   }
   .week input[type="text"] {
     width: 6vw;
@@ -50,6 +51,7 @@
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
    }
   
   .dt input[type="date"] {
@@ -80,28 +82,33 @@
   .btn button:hover {
     background-color: #0056b3;
   }
+/*
+  .minus-btn button{
+    background-color: rgb(236, 76, 76);
+    border-radius: 3px;
+    font-size: 14px;
+  }
+*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
   
   @media screen and (max-width: 600px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin:auto;
+  
+        width: auto;
+    }
+
     table {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       font-size: 14px;
-      margin: auto;
-      padding: auto;
-      width: auto;
+      margin: 0;
+     background-color: #f2f2f2; ;
+      overflow: scroll;
     }
   }
   
